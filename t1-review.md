@@ -4,11 +4,11 @@ What is the run time of the following functions:
 
 ```c
 int f1(int n){
-    int rc=1;
-    for(int i=0;i<5;i++){
-        rc+=1;
+    int rc=1;                 // 1
+    for(int i=0;i<5;i++){     // 1 + 2 * n
+        rc+=1;                // 1 * n
     }
-    return rc;
+    return rc;               // 1
 }
 ```
 
