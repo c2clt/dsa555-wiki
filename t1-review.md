@@ -209,7 +209,27 @@ public:
 
 Write the following member function:
 ```cpp 
-iterator SelfAdjustingList::search(const T& v);
+iterator SelfAdjustingList::search(const T& v){
+    SelAdjustingList::iterator it;
+    for(it = begin(); it != end(); it++){
+    	if(*it == v){
+	    SelfAjustingList::iterator old = it;
+	    SelfAjustingList::iterator pit = --it;
+	    it++;
+	    if(it.curr_->next_ != back_){
+	         SelfAjustingList::iterator nit = ++it;
+	         pit.curr_->next_ = nit.curr_;
+	    }
+	    else{
+	    	pit.curr_->next_ = back_;
+	    }
+	}
+	
+	return old;
+    }
+    
+    return end();
+}
 ```
 * This function searches for v within the list and returns an iterator to the node where v is found.  If not found, function returns end()
 * The list will be adjusted so that the found node is moved so that it becomes the first data node in the list
